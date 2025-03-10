@@ -1,11 +1,11 @@
-"use client"
-import { useRouter } from "next/navigation"
-import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
-import { recommendationsData } from "@/data/recommendations"
+"use client";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { recommendationsData } from "@/data/recommendations";
 
 export default function RecommendationsPage() {
-  const router = useRouter()
+  const router = useRouter();
 
   const container = {
     hidden: { opacity: 0 },
@@ -15,16 +15,24 @@ export default function RecommendationsPage() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
-  }
+  };
 
   return (
-    <motion.div className="p-4" variants={container} initial="hidden" animate="show">
-      <motion.h1 variants={item} className="text-2xl font-bold text-sky-500 mb-6">
+    <motion.div
+      className="p-4"
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
+      <motion.h1
+        variants={item}
+        className="text-2xl font-bold text-sky-500 mb-6"
+      >
         Recommendations
       </motion.h1>
 
@@ -34,19 +42,29 @@ export default function RecommendationsPage() {
 
       <div className="grid gap-4">
         {recommendationsData.map((recommendation, index) => (
-          <motion.div key={recommendation.id} variants={item} className="bg-white rounded-lg overflow-hidden shadow-sm">
+          <motion.div
+            key={recommendation.id}
+            variants={item}
+            className="bg-white rounded-lg overflow-hidden shadow-sm"
+          >
             <div className="aspect-video bg-gray-100 relative">
               <img
-                src={`/placeholder.svg?height=200&width=400&text=${recommendation.title}`}
+                src={recommendation.image}
                 alt={recommendation.title}
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="p-4">
-              <h2 className="text-lg font-semibold mb-2">{recommendation.title}</h2>
-              <p className="text-gray-600 text-sm mb-4">{recommendation.description}</p>
+              <h2 className="text-lg font-semibold mb-2">
+                {recommendation.title}
+              </h2>
+              <p className="text-gray-600 text-sm mb-4">
+                {recommendation.description}
+              </p>
               <button
-                onClick={() => router.push(`/recommendations/${recommendation.id}`)}
+                onClick={() =>
+                  router.push(`/recommendations/${recommendation.id}`)
+                }
                 className="text-sky-500 font-medium flex items-center"
               >
                 Read more
@@ -57,6 +75,5 @@ export default function RecommendationsPage() {
         ))}
       </div>
     </motion.div>
-  )
+  );
 }
-

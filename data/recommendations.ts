@@ -2,7 +2,8 @@ export const recommendationsData = [
   {
     id: 1,
     title: "How to Improve Egg Production",
-    image: "placeholder.jpg",
+    image:
+      "https://marialouisedesign.com/wp-content/uploads/2023/10/AdobeStock_494033900-scaled.jpeg",
     description: "Key factors affecting the productivity of laying hens",
     content: `To increase the egg production of your chickens, pay attention to the following factors:
 
@@ -31,7 +32,8 @@ Applying these recommendations will help significantly increase the productivity
   {
     id: 2,
     title: "Seasonal Feeding",
-    image: "placeholder.jpg",
+    image:
+      "https://thepeasantsdaughter.net/wp-content/uploads/2021/08/fermented-chicken-feed-during-winter.jpg",
     description: "How to adapt chicken diet depending on the season",
     content: `Seasonal feeding of chickens is an important aspect for maintaining stable egg production year-round.
 
@@ -65,7 +67,8 @@ Proper seasonal feeding will help maintain bird health and stable egg production
   {
     id: 3,
     title: "Disease Prevention",
-    image: "placeholder.jpg",
+    image:
+      "https://www.versele-laga.com/-/media/VerseleLaga-Tenant/Global-Site/Articles/Storychief/453811362/shutterstock_1708379959-1920x1080_07af31b99246b7045daae1998d47c703.ashx",
     description: "Essential measures to maintain the health of your flock",
     content: `Disease prevention in chickens is a key factor for maintaining high productivity.
 
@@ -103,7 +106,8 @@ Regular adherence to these measures will help prevent most common diseases and m
   {
     id: 4,
     title: "Optimal Housing Conditions",
-    image: "placeholder.jpg",
+    image:
+      "https://notesforag.com/wp-content/uploads/2024/07/Poultry-Housing.jpeg",
     description: "How to create ideal conditions for high productivity",
     content: `Creating optimal housing conditions for laying hens is key to high egg production.
 
@@ -141,5 +145,4 @@ KEY PARAMETERS:
 
 Following these recommendations will help create comfortable conditions for your chickens and ensure consistently high egg production.`,
   },
-]
-
+];
