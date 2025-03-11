@@ -48,7 +48,12 @@ export default function SettingDetailPage({
       </h1>
 
       <div className="bg-[#D2B48C] rounded-lg p-4 shadow-sm">
-        <p className="text-[#8B5E3C] whitespace-pre-line">{setting.content}</p>
+        <iframe
+          src={setting.content}
+          className="w-full h-[60vh] rounded-md"
+          frameBorder="0"
+        ></iframe>
+        {/* <p className="text-[#8B5E3C] whitespace-pre-line"></p> */}
       </div>
     </motion.div>
   );

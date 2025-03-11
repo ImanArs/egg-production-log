@@ -39,7 +39,7 @@ export function LineChart({ data }: LineChartProps) {
             })
             .join(" ")}
         />
-        {data.map((point, i) => {
+        {/* {data.map((point, i) => {
           const x = (i / (data.length - 1)) * 100;
           const y =
             50 - ((point.count - minCount) / (maxCount - minCount)) * 40;
@@ -57,7 +57,7 @@ export function LineChart({ data }: LineChartProps) {
               </text>
             </g>
           );
-        })}
+        })} */}
       </svg>
     </div>
   );
