@@ -33,19 +33,19 @@ export default function RecommendationDetailPage({
 
   return (
     <motion.div
-      className="p-4"
+      className="p-4 bg-[#E5C9A6]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
       <button
         onClick={() => router.push("/recommendations")}
-        className="flex items-center text-sky-500 mb-4"
+        className="flex items-center text-[#8B5E3C] mb-4"
       >
         <ArrowLeft className="w-4 h-4 mr-1" />
         Back to recommendations
       </button>
 
-      <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden mb-4">
+      <div className="aspect-video bg-[#D2B48C] rounded-lg overflow-hidden mb-4">
         <img
           src={recommendation.image}
           alt={recommendation.title}
@@ -53,12 +53,12 @@ export default function RecommendationDetailPage({
         />
       </div>
 
-      <h1 className="text-2xl font-bold text-sky-500 mb-4">
+      <h1 className="text-2xl font-bold text-[#8B5E3C] mb-4">
         {recommendation.title}
       </h1>
 
-      <div className="bg-white rounded-lg p-4 shadow-sm">
-        <p className="text-gray-700 whitespace-pre-line">
+      <div className="bg-[#D2B48C] rounded-lg p-4 shadow-sm">
+        <p className="text-[#8B5E3C] whitespace-pre-line">
           {recommendation.content}
         </p>
       </div>

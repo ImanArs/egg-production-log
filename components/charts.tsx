@@ -173,7 +173,7 @@ export function PieChart({
         <div className="absolute flex flex-col items-center">
           <span
             className={`text-2xl font-bold ${
-              isIncrease ? "text-sky-500" : "text-red-500"
+              isIncrease ? "text-red-500" : "text-red-500"
             }`}
           >
             {difference}
@@ -191,7 +191,7 @@ export function PieChart({
           <span>{yesterday}</span>
         </div>
         <div className="flex items-center">
-          <div className="w-3 h-3 bg-sky-500 rounded-full mr-1"></div>
+          <div className="w-3 h-3 bg-red-500 rounded-full mr-1"></div>
           <span>{today}</span>
         </div>
       </div>

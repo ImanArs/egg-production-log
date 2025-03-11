@@ -4,10 +4,15 @@
 
 :root {
   --primary: #38bdf8; /* light blue */
-  --background: #ffffff;
+  --background: #542a2a;
   --foreground: #0f172a;
   --danger: #ef4444;
 }
+
+body,html{
+  background: #E5C9A6 !important;
+}
+
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;

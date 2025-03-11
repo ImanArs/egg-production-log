@@ -36,7 +36,7 @@ export function BottomNavigation() {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-10">
+    <div className="fixed bottom-0 left-0 right-0 bg-[#E5C9A6] border-t border-[#D2B48C] z-10">
       <div className="flex justify-around items-center h-16 px-2">
         {tabs.map((tab, index) => {
           const Icon = tab.icon;
@@ -51,16 +51,15 @@ export function BottomNavigation() {
               {isActive && (
                 <motion.div
                   layoutId="activeTab"
-                  className="absolute inset-0 bg-sky-100 rounded-full w-12 h-12 mx-auto"
+                  className="absolute inset-0 bg-[#D2A679] rounded-full w-12 h-12 mx-auto"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
               <Icon
                 className={`w-5 h-5 relative z-10 mb-3 ${
-                  isActive ? "text-[#666]" : "text-sky-500"
+                  isActive ? "text-[#8B5E3C]" : "text-[#A67B5B]"
                 }`}
               />
-              {/* <span className="text-xs mt-1 text-gray-600">{tab.label}</span> */}
             </button>
           );
         })}

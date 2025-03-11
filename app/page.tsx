@@ -78,7 +78,7 @@ export default function HomePage() {
 
   return (
     <motion.div
-      className="p-4 h-full"
+      className="p-4 h-full bg-[#E5C9A6]"
       variants={container}
       initial="hidden"
       animate="show"
@@ -88,8 +88,8 @@ export default function HomePage() {
         className="flex items-center justify-between mb-6"
       >
         <div>
-          <h1 className="text-2xl font-bold text-sky-500">Welcome!</h1>
-          <p className="text-gray-600">Egg Production Log</p>
+          <h1 className="text-2xl font-bold text-[#4E342E]">Welcome!</h1>
+          <p className="text-[#5D4037]">Egg Production Log</p>
         </div>
         <div onClick={() => router.push("/settings")}>
           <AppLogo />
@@ -98,16 +98,19 @@ export default function HomePage() {
 
       <motion.div
         variants={item}
-        className="mb-6 bg-white rounded-lg p-4 shadow-sm min-h-48"
+        className="mb-6 bg-[#D2A679] rounded-lg p-4 shadow-sm min-h-48"
       >
-        <h2 className="text-lg font-semibold text-sky-500 mb-2">
+        <h2 className="text-lg font-semibold text-[#text-[#8B5E3C]] mb-2">
           Egg Collection Statistics
         </h2>
         <LineChart data={eggData} />
       </motion.div>
 
-      <motion.div variants={item} className="bg-white rounded-lg p-4 shadow-sm">
-        <h2 className="text-lg font-semibold text-sky-500 mb-2">
+      <motion.div
+        variants={item}
+        className="bg-[#D2A679] rounded-lg p-4 shadow-sm"
+      >
+        <h2 className="text-lg font-semibold text-[#3E2723] mb-2">
           Comparison with Previous Day
         </h2>
         <div className="flex items-center justify-center">

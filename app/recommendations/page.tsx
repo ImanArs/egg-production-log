@@ -24,14 +24,14 @@ export default function RecommendationsPage() {
 
   return (
     <motion.div
-      className="p-4"
+      className="p-4 bg-[#E5C9A6]"
       variants={container}
       initial="hidden"
       animate="show"
     >
       <motion.h1
         variants={item}
-        className="text-2xl font-bold text-sky-500 mb-6"
+        className="text-2xl font-bold text-[#8B5E3C] mb-6"
       >
         Recommendations
       </motion.h1>
@@ -45,7 +45,7 @@ export default function RecommendationsPage() {
           <motion.div
             key={recommendation.id}
             variants={item}
-            className="bg-white rounded-lg overflow-hidden shadow-sm"
+            className="bg-[#D2B48C] rounded-lg overflow-hidden shadow-sm"
           >
             <div className="aspect-video bg-gray-100 relative">
               <img
@@ -55,7 +55,7 @@ export default function RecommendationsPage() {
               />
             </div>
             <div className="p-4">
-              <h2 className="text-lg font-semibold mb-2">
+              <h2 className="text-lg font-semibold mb-2 text-[#935f38]">
                 {recommendation.title}
               </h2>
               <p className="text-gray-600 text-sm mb-4">
@@ -65,7 +65,7 @@ export default function RecommendationsPage() {
                 onClick={() =>
                   router.push(`/recommendations/${recommendation.id}`)
                 }
-                className="text-sky-500 font-medium flex items-center"
+                className="text-[#8B5E3C] font-medium flex items-center"
               >
                 Read more
                 <ArrowRight className="w-4 h-4 ml-1" />

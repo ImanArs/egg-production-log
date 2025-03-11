@@ -1,13 +1,18 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { motion, AnimatePresence } from "framer-motion"
-import { Egg, BarChartIcon as ChartBar, BookOpen, CheckCircle } from "lucide-react"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Egg,
+  BarChartIcon as ChartBar,
+  BookOpen,
+  CheckCircle,
+} from "lucide-react";
 
 export default function OnboardingPage() {
-  const router = useRouter()
-  const [step, setStep] = useState(0)
+  const router = useRouter();
+  const [step, setStep] = useState(0);
 
   const onboardingSteps = [
     {
@@ -19,7 +24,8 @@ export default function OnboardingPage() {
     {
       icon: <ChartBar className="w-12 h-12 text-white" />,
       title: "Track Productivity",
-      description: "The app will help you keep records and analyze productivity with graphs",
+      description:
+        "The app will help you keep records and analyze productivity with graphs",
       buttonText: "Next",
     },
     {
@@ -34,17 +40,17 @@ export default function OnboardingPage() {
       description: "Begin tracking your chickens' productivity right now",
       buttonText: "Start",
     },
-  ]
+  ];
 
   const handleNext = () => {
     if (step < onboardingSteps.length - 1) {
-      setStep(step + 1)
+      setStep(step + 1);
     } else {
       // Complete onboarding
-      localStorage.setItem("onboardingCompleted", "true")
-      router.push("/")
+      localStorage.setItem("onboardingCompleted", "true");
+      router.push("/");
     }
-  }
+  };
 
   const pulseAnimation = {
     scale: [1, 1.05, 1],
@@ -54,7 +60,7 @@ export default function OnboardingPage() {
       repeat: Number.POSITIVE_INFINITY,
       ease: "easeInOut",
     },
-  }
+  };
 
   return (
     <div className="h-full flex flex-col items-center justify-center p-6 bg-white">
@@ -67,29 +73,39 @@ export default function OnboardingPage() {
           className="flex flex-col items-center text-center max-w-md"
         >
           <motion.div className="relative mb-8" animate={pulseAnimation}>
-            <div className="absolute inset-0 bg-sky-200 rounded-full opacity-30 scale-125" />
-            <div className="bg-sky-500 rounded-full p-6 relative">{onboardingSteps[step].icon}</div>
+            <div className="absolute inset-0 bg-red-200 rounded-full opacity-30 scale-125" />
+            <div className="bg-red-500 rounded-full p-6 relative">
+              {onboardingSteps[step].icon}
+            </div>
           </motion.div>
 
-          <h1 className="text-2xl font-bold mb-3 text-sky-500">{onboardingSteps[step].title}</h1>
+          <h1 className="text-2xl font-bold mb-3 text-red-500">
+            {onboardingSteps[step].title}
+          </h1>
 
-          <p className="text-gray-600 mb-8">{onboardingSteps[step].description}</p>
+          <p className="text-gray-600 mb-8">
+            {onboardingSteps[step].description}
+          </p>
 
           <button
             onClick={handleNext}
-            className="bg-sky-500 text-white py-3 px-8 rounded-full font-medium shadow-sm hover:bg-sky-600 transition-colors"
+            className="bg-red-500 text-white py-3 px-8 rounded-full font-medium shadow-sm hover:bg-red-600 transition-colors"
           >
             {onboardingSteps[step].buttonText}
           </button>
 
           <div className="flex mt-8 gap-2">
             {onboardingSteps.map((_, index) => (
-              <div key={index} className={`h-2 w-2 rounded-full ${index === step ? "bg-sky-500" : "bg-gray-200"}`} />
+              <div
+                key={index}
+                className={`h-2 w-2 rounded-full ${
+                  index === step ? "bg-red-500" : "bg-gray-200"
+                }`}
+              />
             ))}
           </div>
         </motion.div>
       </AnimatePresence>
     </div>
-  )
+  );
 }
-

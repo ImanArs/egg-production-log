@@ -1,40 +1,45 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Plus, Egg } from "lucide-react"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Plus, Egg } from "lucide-react";
 
 export default function ReportPage() {
-  const [date, setDate] = useState(new Date().toISOString().split("T")[0])
-  const [count, setCount] = useState(0)
-  const [isSaved, setIsSaved] = useState(false)
+  const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
+  const [count, setCount] = useState(0);
+  const [isSaved, setIsSaved] = useState(false);
 
   const handleSave = () => {
     // Get existing data from localStorage
-    const existingData = localStorage.getItem("eggData")
-    const eggData = existingData ? JSON.parse(existingData) : []
+    const existingData = localStorage.getItem("eggData");
+    const eggData = existingData ? JSON.parse(existingData) : [];
 
     // Check if entry for this date already exists
-    const existingEntryIndex = eggData.findIndex((entry: any) => entry.date === date)
+    const existingEntryIndex = eggData.findIndex(
+      (entry: any) => entry.date === date
+    );
 
     if (existingEntryIndex >= 0) {
       // Update existing entry
-      eggData[existingEntryIndex].count = count
+      eggData[existingEntryIndex].count = count;
     } else {
       // Add new entry
-      eggData.push({ date, count })
+      eggData.push({ date, count });
     }
 
     // Sort by date
-    eggData.sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())
+    eggData.sort(
+      (a: any, b: any) =>
+        new Date(a.date).getTime() - new Date(b.date).getTime()
+    );
 
     // Save to localStorage
-    localStorage.setItem("eggData", JSON.stringify(eggData))
+    localStorage.setItem("eggData", JSON.stringify(eggData));
 
     // Show success message
-    setIsSaved(true)
-    setTimeout(() => setIsSaved(false), 2000)
-  }
+    setIsSaved(true);
+    setTimeout(() => setIsSaved(false), 2000);
+  };
 
   const container = {
     hidden: { opacity: 0 },
@@ -44,16 +49,24 @@ export default function ReportPage() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
-  }
+  };
 
   return (
-    <motion.div className="p-4" variants={container} initial="hidden" animate="show">
-      <motion.h1 variants={item} className="text-2xl font-bold text-sky-500 mb-6">
+    <motion.div
+      className="p-4 bg-[#E5C9A6]"
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
+      <motion.h1
+        variants={item}
+        className="text-2xl font-bold text-[#8B5E3C] mb-6"
+      >
         Add Report
       </motion.h1>
 
@@ -61,20 +74,29 @@ export default function ReportPage() {
         Fill out the form to add data about egg collection
       </motion.p>
 
-      <motion.div variants={item} className="bg-white rounded-lg p-4 shadow-sm mb-4">
+      <motion.div
+        variants={item}
+        className="bg-[#D2B48C] rounded-lg p-4 shadow-sm mb-4"
+      >
         <label className="block text-gray-700 mb-2">Collection Date</label>
         <input
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
+          className="w-full p-2 border-[#E5C9A6] border rounded-md focus:outline-none focus:ring-2 bg-[#0000]"
         />
       </motion.div>
 
-      <motion.div variants={item} className="bg-white rounded-lg p-4 shadow-sm mb-6">
+      <motion.div
+        variants={item}
+        className="bg-[#D2B48C] rounded-lg p-4 shadow-sm mb-6"
+      >
         <label className="block text-gray-700 mb-2">Number of Eggs</label>
         <div className="flex items-center">
-          <button onClick={() => setCount(Math.max(0, count - 1))} className="bg-gray-200 p-2 rounded-l-md">
+          <button
+            onClick={() => setCount(Math.max(0, count - 1))}
+            className="bg-[#D2A679] p-2 rounded-l-md"
+          >
             -
           </button>
           <input
@@ -82,9 +104,12 @@ export default function ReportPage() {
             min="0"
             value={count}
             onChange={(e) => setCount(Number.parseInt(e.target.value) || 0)}
-            className="w-full p-2 border-y border-gray-300 text-center focus:outline-none"
+            className="w-full p-2 border-[#8B5E3C] bg-[#0000] text-center focus:outline-none"
           />
-          <button onClick={() => setCount(count + 1)} className="bg-gray-200 p-2 rounded-r-md">
+          <button
+            onClick={() => setCount(count + 1)}
+            className="bg-[#D2A679] p-2 rounded-r-md"
+          >
             +
           </button>
         </div>
@@ -97,7 +122,7 @@ export default function ReportPage() {
       <motion.button
         variants={item}
         onClick={handleSave}
-        className="w-full bg-sky-500 text-white py-3 px-4 rounded-md font-medium shadow-sm hover:bg-sky-600 transition-colors flex items-center justify-center"
+        className="w-full bg-[#D2B48C] text-[#8B5E3C] py-3 px-4 rounded-md font-medium shadow-sm hover:bg-[#D2A679] transition-colors flex items-center justify-center"
       >
         <Plus className="w-5 h-5 mr-2" />
         Save Report
@@ -114,6 +139,5 @@ export default function ReportPage() {
         </motion.div>
       )}
     </motion.div>
-  )
+  );
 }
-

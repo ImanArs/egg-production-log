@@ -107,7 +107,7 @@ Regular adherence to these measures will help prevent most common diseases and m
     id: 4,
     title: "Optimal Housing Conditions",
     image:
-      "https://notesforag.com/wp-content/uploads/2024/07/Poultry-Housing.jpeg",
+      "https://cdn.shopify.com/s/files/1/0515/0765/8911/files/laying_hens-min.jpg?v=1687871638",
     description: "How to create ideal conditions for high productivity",
     content: `Creating optimal housing conditions for laying hens is key to high egg production.
 
@@ -144,5 +144,85 @@ KEY PARAMETERS:
 - Include shelter from rain
 
 Following these recommendations will help create comfortable conditions for your chickens and ensure consistently high egg production.`,
+  },
+  {
+    id: 5,
+    title: "Chicken Molt Care",
+    image:
+      "https://www.kalmbachfeeds.com/cdn/shop/articles/Molting-Article-Blog-Header-10.19.21.jpg?v=1706872889",
+    description: "How to care for chickens during molting season",
+    content: `Molting is a natural process where chickens shed old feathers and grow new ones. It can be stressful for them, but proper care can help them through it.
+  
+  1. Diet Adjustment
+  - Increase protein content in the feed to 18-20% to support feather regrowth
+  - Add fresh greens and high-quality grains to boost nutrition
+  - Ensure access to plenty of clean water
+  
+  2. Provide Rest
+  - Allow chickens to rest more during molting as they may become tired more easily
+  - Reduce stress by maintaining a calm and quiet environment
+  
+  3. Prevent Drafts
+  - Keep the coop free of drafts, especially during colder months, as chickens with missing feathers can be more susceptible to the cold
+  
+  4. Light Exposure
+  - Provide consistent light exposure (14-16 hours per day) to maintain egg production, if desired
+  - Adjust lighting to avoid triggering excessive molting in the winter months
+  
+  By following these tips, you can ensure that your chickens stay healthy and comfortable during the molting process.`,
+  },
+  {
+    id: 6,
+    title: "Free-Range vs. Caged Chickens",
+    image:
+      "https://www.peteandgerrys.com/cdn/shop/articles/optimized-free-range-cage-free.jpg?v=1681312953",
+    description: "Pros and cons of free-range and caged housing systems",
+    content: `Choosing between free-range and caged housing systems for your chickens depends on various factors, including available space, climate, and desired egg production.
+  
+  1. Free-Range Benefits
+  - Chickens have access to natural forage, which improves their overall health
+  - Increased space for movement leads to less stress and better behavior
+  - Eggs from free-range chickens may have higher nutritional value, such as more omega-3s and vitamin D
+  
+  2. Free-Range Challenges
+  - Requires larger space and secure fencing to prevent predators
+  - Chickens may become exposed to parasites or diseases from other wildlife
+  - Potentially lower egg production if chickens are less focused on laying in the nest boxes
+  
+  3. Caged Housing Benefits
+  - Easier to manage and monitor chickens in smaller spaces
+  - More predictable egg production since chickens are confined to a specific area
+  - Can be easier to control health and prevent diseases in a more controlled environment
+  
+  4. Caged Housing Challenges
+  - Less natural behavior, such as foraging and dust bathing, which can lead to stress
+  - Requires careful attention to space and hygiene to avoid health issues
+  
+  Ultimately, the choice depends on your goals, available resources, and preference for chicken care.`,
+  },
+  {
+    id: 7,
+    title: "Handling Broody Hens",
+    image:
+      "https://betterflock.com/cdn/shop/articles/Broody_Hen_Better_Flock.png?v=1718896223&width=1500",
+    description: "What to do if your hen becomes broody",
+    content: `A broody hen is one that wants to incubate eggs and may stop laying or get aggressive about protecting her nest. While this is a natural instinct, it can interfere with egg production and flock management.
+  
+  1. Identify Broody Behavior
+  - The hen will sit in the nest box, puffing up and possibly clucking loudly
+  - She may become more protective and aggressive, refusing to leave the nest even when the eggs are collected
+  
+  2. Managing Broody Hens
+  - If you don't want the hen to hatch eggs, gently remove her from the nest box and encourage her to eat and drink
+  - Consider placing her in a "broody breaker" cage, a small, well-ventilated area with no nesting material, so she can cool down and stop her broody behavior
+  
+  3. Letting Her Hatch
+  - If you want her to hatch eggs, ensure the eggs are fertile and provide a safe, quiet environment for her
+  - Monitor her closely to ensure she’s not being overly aggressive with other hens or causing stress
+  
+  4. Prevent Broody Behavior
+  - If broody behavior becomes a frequent issue, consider providing more space and additional nest boxes to reduce the chances of a hen becoming broody
+  
+  Broody hens are natural, but managing their behavior is essential for maintaining flock harmony and egg production.`,
   },
 ];
