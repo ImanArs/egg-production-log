@@ -17,18 +17,18 @@ export function LineChart({ data }: LineChartProps) {
   return (
     <div className="relative w-full min-h-48 h-48 flex flex-col items-center">
       {/* Axes */}
-      <div className="absolute left-4 top-0 bottom-4 w-px bg-gray-300"></div>
-      <div className="absolute left-4 right-4 bottom-4 h-px bg-gray-300"></div>
+      <div className="absolute left-4 top-0 bottom-4 w-px bg-[#8B5E3C]"></div>
+      <div className="absolute left-4 right-4 bottom-4 h-px bg-[#8B5E3C]"></div>
 
       {/* Line and Points */}
       <svg
-        className="w-full h-full"
-        viewBox="0 0 100 50"
+        className="w-[100%] h-[100%] px-4"
+        viewBox="0 0 300 50"
         preserveAspectRatio="none"
       >
-        <motion.polyline
+        <polyline
           fill="none"
-          stroke="#38bdf8"
+          stroke="#8B5E3C"
           strokeWidth="1"
           points={data
             .map((point, i) => {
@@ -38,9 +38,6 @@ export function LineChart({ data }: LineChartProps) {
               return `${x},${y}`;
             })
             .join(" ")}
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 1 }}
         />
         {data.map((point, i) => {
           const x = (i / (data.length - 1)) * 100;
@@ -48,17 +45,9 @@ export function LineChart({ data }: LineChartProps) {
             50 - ((point.count - minCount) / (maxCount - minCount)) * 40;
           return (
             <g key={i}>
-              <motion.circle
-                cx={x}
-                cy={y}
-                r="1.5"
-                fill="#38bdf8"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: i * 0.1, duration: 0.3 }}
-              />
+              <circle cx={x + 1.4} cy={y} r="1.5" fill="#8B5E3C" />
               <text
-                x={x}
+                x={x + 1.5}
                 y={y - 2}
                 fontSize="2"
                 textAnchor="middle"
@@ -70,19 +59,6 @@ export function LineChart({ data }: LineChartProps) {
           );
         })}
       </svg>
-
-      {/* Dates on x-axis */}
-      <div className="absolute bottom-0 left-4 right-4 flex justify-between text-xs text-gray-500">
-        {data.map((point, i) => {
-          const date = new Date(point.date);
-          const formattedDate = `${date.getDate()}/${date.getMonth() + 1}`;
-          return (
-            <span key={i} className="w-8 text-center">
-              {formattedDate}
-            </span>
-          );
-        })}
-      </div>
     </div>
   );
 }
@@ -118,7 +94,7 @@ export function PieChart({
             cy="50"
             r="45"
             fill="none"
-            stroke="#e2e8f0"
+            stroke="#E5C9A6"
             strokeWidth="10"
           />
         </svg>
@@ -135,7 +111,7 @@ export function PieChart({
             cy="50"
             r="45"
             fill="none"
-            stroke="#38bdf8"
+            stroke="#8B5E3C"
             strokeWidth="10"
             strokeDasharray="282.6"
             strokeDashoffset={282.6 * (1 - todayPercentage / 100)}
@@ -158,7 +134,7 @@ export function PieChart({
             cy="50"
             r="45"
             fill="none"
-            stroke="#ef4444"
+            stroke="#A67B5B"
             strokeWidth="10"
             strokeDasharray="282.6"
             strokeDashoffset={(282.6 * todayPercentage) / 100}
@@ -173,26 +149,12 @@ export function PieChart({
         <div className="absolute flex flex-col items-center">
           <span
             className={`text-2xl font-bold ${
-              isIncrease ? "text-red-500" : "text-red-500"
+              isIncrease ? "text-[#8B5E3C]" : "text-[#A67B5B]"
             }`}
           >
+            {isIncrease ? "+" : "-"}
             {difference}
           </span>
-          <span className="text-gray-500 text-sm">
-            {isIncrease ? "more" : "less"}
-          </span>
-        </div>
-      </div>
-
-      {/* Legend */}
-      <div className="absolute bottom-0 left-0 right-0 flex justify-around text-xs text-gray-600">
-        <div className="flex items-center">
-          <div className="w-3 h-3 bg-red-500 rounded-full mr-1"></div>
-          <span>{yesterday}</span>
-        </div>
-        <div className="flex items-center">
-          <div className="w-3 h-3 bg-red-500 rounded-full mr-1"></div>
-          <span>{today}</span>
         </div>
       </div>
     </div>
