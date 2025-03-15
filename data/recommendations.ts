@@ -3,7 +3,7 @@ export const recommendationsData = [
     id: 1,
     title: "How to Improve Egg Production",
     image:
-      "https://marialouisedesign.com/wp-content/uploads/2023/10/AdobeStock_494033900-scaled.jpeg",
+      "https://marialouisedesign.com/wp-content/uploads/2023/10/AdobeStock_644109062-1024x683.jpeg",
     description: "Key factors affecting the productivity of laying hens",
     content: `To increase the egg production of your chickens, pay attention to the following factors:
 
